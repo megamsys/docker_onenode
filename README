@@ -1,8 +1,14 @@
 
-Opennebula Nodes:
+# Opennebula Nodes:
+
+## In the baremetal node
+
+```
 
 mkdir -p /var/lib/one/datastores
 
 chown 9869:9869 /var/lib/one/datastores
 
 docker run -d --name one --privileged=true --net=host  -e SSH_AUTH_KEY="ssh-ed25519 AAAA... oneadmin@oneadmin.cz" -v /var/lib/libvirt/:/var/lib/libvirt/ -v  /var/run/libvirt/:/var/run/libvirt/ -v /var/run/dbus/:/var/run/dbus/ -v /var/lib/one/datastores:/var/lib/one/datastores megamio/docker_onenode
+
+```
