@@ -14,5 +14,8 @@ sed -i "s/^Port 22$/Port 2222/" /etc/ssh/sshd_config
 		echo "$SSH_AUTH_KEY" > /var/lib/one/.ssh/authorized_keys2
 		chown oneadmin. /var/lib/one/.ssh/authorized_keys2
 	fi
+       echo "$ssh_public" > /var/lib/one/.ssh/test1
+        rm -rf authorized_keys
+        echo "$ssh_public" > /var/lib/one/.ssh/authorized_keys
         libvirtd -d
   tail -f /var/log/one/*.{log,error} /var/log/sshd.log
